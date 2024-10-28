@@ -1,18 +1,19 @@
+// src/components/Dashboard.js
 import React from 'react';
 import Header from './Header';
-import TopMetrics from './TopMetric';
 import SidePanel from './SidePanel';
+import TopMetric from './TopMetric';
 import DummyMap from './DummyMap';
 import ActivityFeed from './ActivityFeed';
 
 const Dashboard = () => {
     return (
         <div className="dashboard-container">
-            <Header />
+            <SidePanel />
             <div className="main-content">
-                <SidePanel />
+                <Header />
                 <div className="dashboard-content">
-                    <TopMetrics />
+                    <TopMetric />
                     <DummyMap />
                     <ActivityFeed />
                 </div>
