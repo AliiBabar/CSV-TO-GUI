@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
   return (
-    <AppBar position="static" color="primary" sx={{ width: 'calc(100% - 240px)', marginLeft: '240px' }}>
+    <AppBar position="static" color="primary" sx={{ width: '100%' }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Dashboard
