@@ -1,19 +1,32 @@
-// src/components/TopMetric.js
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { Box, Typography, Grid } from '@mui/material';
 
 const TopMetric = () => {
-    return (
-        <div className="overview-metrics">
-            <h5 className="section-title">Overview Metrics</h5>
-            <ListGroup variant="flush">
-                <ListGroup.Item>Total Orders <span className="metric-value">1234</span></ListGroup.Item>
-                <ListGroup.Item>Total Cost <span className="metric-value">$500,000</span></ListGroup.Item>
-                <ListGroup.Item>Average Order Value <span className="metric-value">$400</span></ListGroup.Item>
-                <ListGroup.Item>Last Updated <span className="metric-value">10/26/2024</span></ListGroup.Item>
-            </ListGroup>
-        </div>
-    );
+  return (
+    <Box sx={{ padding: 1, backgroundColor: '#F7F8FC', borderRadius: '8px', width: '50%', marginTop: 2 }}>
+      <Typography variant="h6" sx={{ marginBottom: 1 }}>
+        Overview Metrics
+      </Typography>
+      <Grid container spacing={1} direction="column">
+        <Grid item>
+          <Typography variant="subtitle1" display="inline">Total Value: </Typography>
+          <Typography variant="h6" display="inline">$100,000</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="subtitle1" display="inline">Total Cost: </Typography>
+          <Typography variant="h6" display="inline">$50,000</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="subtitle1" display="inline">Average Order Value: </Typography>
+          <Typography variant="h6" display="inline">$500</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="subtitle1" display="inline">Last Updated: </Typography>
+          <Typography variant="h6" display="inline">Oct 28, 2024</Typography>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 };
 
 export default TopMetric;
