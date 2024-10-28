@@ -2,22 +2,18 @@ import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 
 const ActivityFeed = () => {
-  const activities = [
-    { id: 1, text: 'New features coming soon!' },
-    { id: 2, text: 'System maintenance on Saturday' },
-  ];
-
   return (
-    <Box sx={{ padding: 2, backgroundColor: '#F7F8FC', borderRadius: '8px', marginTop: 2, maxHeight: '150px' }}>
+    <Box sx={{ padding: 2, backgroundColor: '#2C2C2C', borderRadius: '12px', marginTop: 2, color: '#FFF' }}>
       <Typography variant="h6" sx={{ marginBottom: 1 }}>
-        Announcments
+        Activity Feed
       </Typography>
       <List>
-        {activities.map((activity) => (
-          <ListItem key={activity.id}>
-            <ListItemText primary={activity.text} />
-          </ListItem>
-        ))}
+        <ListItem>
+          <ListItemText primary="New features coming soon!" />
+        </ListItem>
+        <ListItem>
+          <ListItemText primary="System maintenance on Saturday" />
+        </ListItem>
       </List>
     </Box>
   );
