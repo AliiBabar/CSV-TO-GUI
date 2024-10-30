@@ -1,28 +1,32 @@
+// src/components/DummyMap.js
 import React from 'react';
-import Plot from 'react-plotly.js';
-import { Box, Typography } from '@mui/material';
+import { Paper, Typography, Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const DummyMap = () => {
-  return (
-    <Box sx={{ padding: 2, backgroundColor: '#2C2C2E', borderRadius: '12px', color: '#FFF', width: '100%', minHeight: '250px' }}>
-      <Typography variant="h6" sx={{ marginBottom: 1 }}>
-        Regional Sales Heatmap
-      </Typography>
-      <Plot
-        data={[
-          {
-            z: [[10, 20, 30, 40, 50], [15, 25, 35, 45, 55], [20, 30, 40, 50, 60], [25, 35, 45, 55, 65], [30, 40, 50, 60, 70]],
-            x: ['Northeast', 'Southeast', 'Midwest', 'Southwest', 'West'],
-            y: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5'],
-            type: 'heatmap',
-            colorscale: 'Blues',
-          },
-        ]}
-        layout={{ autosize: true, margin: { t: 20, b: 20, l: 50, r: 20 } }}
-        style={{ width: '100%', height: '100%' }}
-      />
-    </Box>
-  );
+    const theme = useTheme();
+
+    return (
+        <Paper elevation={4} sx={{ padding: 3, borderRadius: 2, minHeight: '100%' }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                Regional Sales Heatmap
+            </Typography>
+            <Box
+                sx={{
+                    height: 300,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: theme.palette.background.paper,
+                    borderRadius: 1,
+                    color: theme.palette.text.secondary,
+                    fontSize: 18,
+                }}
+            >
+                [Heatmap Placeholder]
+            </Box>
+        </Paper>
+    );
 };
 
 export default DummyMap;

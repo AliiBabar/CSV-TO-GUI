@@ -1,16 +1,15 @@
+// src/App.js
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
 import Dashboard from './components/Dashboard/Dashboard';
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
-    </Router>
-  );
-}
+const App = () => {
+    return (
+        <>
+            <CssBaseline /> {/* Ensures consistent baseline styling */}
+            <Dashboard /> {/* Renders the main Dashboard component */}
+        </>
+    );
+};
 
 export default App;
