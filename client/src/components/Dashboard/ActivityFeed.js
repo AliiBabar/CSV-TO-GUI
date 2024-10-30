@@ -1,7 +1,21 @@
 // src/components/ActivityFeed.js
 import React from 'react';
-import { Paper, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Paper, Typography, List, ListItem, ListItemText, keyframes } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { styled } from '@mui/system';
+
+// Define keyframes using MUI's keyframes utility
+const blinker = keyframes`
+  50% {
+    opacity: 0;
+  }
+`;
+
+const BlinkingText = styled('span')(({ theme }) => ({
+    color: 'red',
+    fontWeight: 'bold',
+    animation: `${blinker} 3s linear infinite`,
+}));
 
 const ActivityFeed = () => {
     const theme = useTheme();
@@ -17,16 +31,17 @@ const ActivityFeed = () => {
                 color: theme.palette.text.primary,
             }}
         >
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
                 Announcements
             </Typography>
             <List>
                 <ListItem>
-                    <ListItemText primary="New features coming soon!" />
+                    <ListItemText
+                        primary={
+                            <BlinkingText>New features coming soon!</BlinkingText>
+                        }
+                    />
                 </ListItem>
-                {/* <ListItem>
-                    <ListItemText primary="System maintenance on Saturday." />
-                </ListItem> */}
             </List>
         </Paper>
     );

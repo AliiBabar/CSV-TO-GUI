@@ -8,7 +8,11 @@ const Header = () => {
     const theme = useTheme();
 
     return (
-        <AppBar position="static" sx={{ width: '100%', backgroundColor: theme.palette.primary.main }}>
+        <AppBar position="static" sx={{ 
+            width: '100%', 
+            backgroundColor: theme.palette.primary.main, 
+            borderRadius: '8px'  // Apply 8px borderRadius here
+        }}>
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Dashboard

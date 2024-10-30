@@ -28,7 +28,7 @@ const CSVUploader = ({ onFileUpload }) => {
                 color: theme.palette.text.primary,
             }}
         >
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
                 Upload CSV File
             </Typography>
             <label htmlFor="csv-upload">
