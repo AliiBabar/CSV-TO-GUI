@@ -1,32 +1,41 @@
+// src/components/TopMetric.js
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import { Paper, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const TopMetric = () => {
-  return (
-    <Box sx={{ padding: 2, backgroundColor: '#2C2C2E', borderRadius: '12px', width: '90%', color: '#FFF', minHeight: '250px' }}>
-      <Typography variant="h6" sx={{ marginBottom: 2 }}>
-        Overview Metrics
-      </Typography>
-      <Grid container spacing={2} direction="column">
-        <Grid item container>
-          <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>Total Value:</Typography>
-          <Typography variant="h6" sx={{ color: 'green' }}>$100,000</Typography>
-        </Grid>
-        <Grid item container>
-          <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>Total Cost:</Typography>
-          <Typography variant="h6" sx={{ color: 'green' }}>$50,000</Typography>
-        </Grid>
-        <Grid item container>
-          <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>Average Order Value:</Typography>
-          <Typography variant="h6" sx={{ color: 'green' }}>$500</Typography>
-        </Grid>
-        <Grid item container>
-          <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>Last Updated:</Typography>
-          <Typography variant="h6" sx={{ color: 'green' }}>Oct 28, 2024</Typography>
-        </Grid>
-      </Grid>
-    </Box>
-  );
+    const theme = useTheme();
+
+    return (
+        <Paper
+            elevation={4}
+            sx={{
+                padding: 3,
+                borderRadius: 2,
+                minHeight: '100%',
+                backgroundColor: theme.palette.background.paper,
+                color: theme.palette.text.primary,
+            }}
+        >
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                Overview Metrics
+            </Typography>
+            <List>
+                <ListItem>
+                    <ListItemText primary="Total Orders" secondary="1234" />
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Total Cost" secondary="$500,000" />
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Average Order Value" secondary="$400" />
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Last Updated" secondary="10/26/2024" />
+                </ListItem>
+            </List>
+        </Paper>
+    );
 };
 
 export default TopMetric;
