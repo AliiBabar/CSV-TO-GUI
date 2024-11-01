@@ -70,6 +70,12 @@ export const themeSettings = (mode) => {
         fontFamily: ["Montserrat"].join(","),
         fontSize: 18, 
       },
+      baLabel: {
+        fontFamily: ["Poppins", "Montserrat"].join(","), // Set a unique font
+        fontSize: 20, // Slightly larger to stand out
+        fontWeight: 700, // Bold for emphasis
+        color: colorTokens.primary[500], // Use a distinct color from your palette
+      },
     },
   };
 };
