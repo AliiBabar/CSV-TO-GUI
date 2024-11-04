@@ -38,6 +38,14 @@ const ActivityFeed = () => {
                 <ListItem>
                     <ListItemText
                         primary={
+                            <BlinkingText>Explore our new insights! Check out the latest updates in Sales and Profit.</BlinkingText>
+                        }
+                    />
+                </ListItem>
+
+                <ListItem>
+                    <ListItemText
+                        primary={
                             <BlinkingText>New features coming soon!</BlinkingText>
                         }
                     />
